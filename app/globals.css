@@ -6,6 +6,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

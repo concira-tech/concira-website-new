@@ -25,7 +25,7 @@ const SectionThree = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black px-4 py-20">
+    <div id="industries" className="min-h-screen flex items-center justify-center bg-black px-4 py-20">
       <div className="w-full max-w-5xl relative">
         {/* Outer circle */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

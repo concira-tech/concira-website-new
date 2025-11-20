@@ -70,7 +70,6 @@ const SectionTwo: React.FC = () => {
   // When user clicks a tab, jump and restart timer
   const handleTabClick = (index: number) => {
     setActiveIndex(index);
-    // soft reset the autoplay if not paused
     if (!paused) {
       startAutoplay();
     }
@@ -78,20 +77,21 @@ const SectionTwo: React.FC = () => {
 
   return (
     <section
+      id="products"
       className="bg-[#202020] text-black"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-label="Platform features"
     >
-      <div className="container mx-auto py-20 flex flex-col gap-12 lg:gap-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 flex flex-col gap-10 lg:gap-14">
         {/* Heading */}
-        <h1 className="text-center text-4xl md:text-5xl font-bold leading-tight text-white">
+        <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white">
           One Platform. <br className="hidden md:block" /> Infinite
           Possibilities.
         </h1>
 
         {/* Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-10">
           {tabs.map((tab, index) => {
             const isActive = activeIndex === index;
             return (
@@ -100,7 +100,7 @@ const SectionTwo: React.FC = () => {
                 type="button"
                 onClick={() => handleTabClick(index)}
                 className={[
-                  "border-b-4 pb-1 text-base md:text-lg transition-all duration-300 focus:outline-none cursor-pointer",
+                  "border-b-4 pb-1 text-sm sm:text-base md:text-lg transition-all duration-300 focus:outline-none cursor-pointer",
                   isActive
                     ? "border-b-primary text-white"
                     : "border-b-transparent text-gray-500 hover:text-white",
@@ -132,9 +132,9 @@ const SectionTwo: React.FC = () => {
                 className="flex-none w-full"
                 aria-label={tab.title}
               >
-                <div className="mx-4 md:mx-8 bg-black rounded-2xl  px-6 md:px-10 py-8 md:py-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                  <div className="w-full md:w-7/12">
-                    <div className="bg-primary w-15 h-15 flex items-center justify-center rounded-xl mb-3">
+                <div className="mx-2 sm:mx-4 md:mx-8 bg-black rounded-2xl px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+                  <div className="w-full md:w-7/12 text-center md:text-left">
+                    <div className="bg-primary inline-flex items-center justify-center rounded-xl mb-3 size-12 sm:size-14">
                       <Image
                         src={tab.icons}
                         alt={tab.title}
@@ -142,20 +142,20 @@ const SectionTwo: React.FC = () => {
                         height={40}
                       />
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-white">
                       {tab.title}
                     </h2>
-                    <p className="text-gray-400 text-base md:text-lg">
+                    <p className="text-gray-400 text-sm sm:text-base md:text-lg">
                       {tab.description}
                     </p>
                   </div>
                   <div className="w-full md:w-5/12 flex justify-center">
-                    {/* Use <img> for dynamic/public assets without Next/Image config friction */}
                     <Image
                       src="/sectionTwo/icon5.svg"
                       alt={tab.title}
                       width={800}
                       height={800}
+                      className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-full"
                     />
                   </div>
                 </div>
@@ -175,7 +175,6 @@ const SectionTwo: React.FC = () => {
             transform: translateX(0%);
           }
         }
-        /* Animate using transform for better perf */
         div[style*="animation: fill"] {
           transform: translateX(-100%);
           will-change: transform;

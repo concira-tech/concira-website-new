@@ -11,15 +11,29 @@ import {
 } from "./ui/Select";
 import { Textarea } from "./ui/Textarea";
 import { Button } from "./ui/Button";
+import { motion } from "motion/react";
 
 const Contactus = () => {
   return (
     <>
-      <div className="bg-black px-4 py-20">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="bg-black px-4 py-20"
+        id="contact"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left - Content */}
-            <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
               <div className="space-y-4">
                 <span className="text-xs font-semibold tracking-widest text-primary uppercase">
                   Concira Contact
@@ -81,10 +95,16 @@ const Contactus = () => {
                 personalized demo, technical support, or want to collaborate on
                 a new project.
               </p>
-            </div>
+            </motion.div>
 
             {/* Right - Contact Form */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8"
+            >
               <div className="space-y-6">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-white">
@@ -148,13 +168,19 @@ const Contactus = () => {
                   </Button>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Contact Info Cards */}
-      <div className="bg-zinc-900 px-4 py-16">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="bg-zinc-900 px-4 py-16"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Message Us */}
@@ -189,7 +215,7 @@ const Contactus = () => {
             </Card>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

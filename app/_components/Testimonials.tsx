@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card } from "./ui/Card";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/Avatar";
 import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
+import { motion } from "motion/react";
 
 const testimonials = [
   {
@@ -70,7 +71,13 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="px-4 py-20 bg-black">
+   <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="px-4 py-20 bg-black"
+      >
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
           Trusted by Innovators and Builders
@@ -144,7 +151,7 @@ const Testimonials = () => {
           </div>
         </Card>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
