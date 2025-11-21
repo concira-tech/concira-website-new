@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
-  { href: "#", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "#solutions", label: "Solutions" },
   { href: "#products", label: "Products" },
-  { href: "#industries", label: "Sectors" },
+  { href: "/sectors", label: "Sectors" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
@@ -30,40 +31,41 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header
-      className={`sticky top-4 z-40 px-4 transition-all duration-300`}
-    >
+    <header className="sticky top-4 z-40 w-full max-w-[100vw]">
       <div
-        className={`container mx-auto border border-[#454546] rounded-full 
-        px-4 sm:px-6 py-3 flex items-center justify-between
+        className={`mx-auto max-w-6xl w-full px-4 sm:px-6 py-3 flex items-center justify-between
+        border border-[#454546] rounded-full 
         backdrop-blur-md bg-black/60
+        transition-all duration-300
         ${isScrolled ? "shadow-lg" : ""}`}
       >
         {/* Logo */}
-        <div className="flex items-center gap-2 cursor-pointer">
+        <Link href="/" className="flex items-center gap-2 cursor-pointer">
           <Image src="/logo.svg" alt="logo" width={140} height={40} />
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm lg:text-base">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
+            <Link
+              key={link.href + link.label}
               href={link.href}
               className="text-white/80 hover:text-primary transition-colors"
+              scroll
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
-        <a
+        <Link
           href="#contact"
+          scroll
           className="hidden md:inline-flex border border-[#454546] text-white px-4 py-2 rounded-full text-sm lg:text-base hover:bg-primary hover:text-black transition-colors"
         >
           Request Demo
-        </a>
+        </Link>
 
         {/* Mobile Hamburger */}
         <button
@@ -84,26 +86,30 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden max-w-6xl mx-auto mt-3 px-4"
+            className="md:hidden w-full max-w-[100vw]"
           >
-            <div className="rounded-2xl border border-[#454546] bg-black/90 backdrop-blur-md py-4 px-4 space-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
+            <div className="mx-auto max-w-6xl mt-3 px-4">
+              <div className="rounded-2xl border border-[#454546] bg-black/90 backdrop-blur-md py-4 px-4 space-y-3">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href + link.label}
+                    href={link.href}
+                    scroll
+                    onClick={closeMenu}
+                    className="block text-white/90 hover:text-primary text-sm py-1"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  href="#contact"
+                  scroll
                   onClick={closeMenu}
-                  className="block text-white/90 hover:text-primary text-sm py-1"
+                  className="mt-2 inline-flex w-full items-center justify-center border border-[#454546] text-white px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-black transition-colors"
                 >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={closeMenu}
-                className="mt-2 inline-flex w-full items-center justify-center border border-[#454546] text-white px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-black transition-colors"
-              >
-                Request Demo
-              </a>
+                  Request Demo
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

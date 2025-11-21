@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="min-h-screen w-full overflow-x-hidden">
       {/* Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-0.5 sm:h-1 bg-primary z-50 origin-left"
@@ -80,7 +80,7 @@ export default function Home() {
       </motion.button>
 
       {/* Page Content */}
-      <div className="flex flex-col space-y-12 sm:space-y-16 lg:space-y-20">
+      <div className="flex flex-col space-y-12">
         <Navbar />
         <HeroSection />
       </div>
@@ -93,6 +93,6 @@ export default function Home() {
       <Testimonials />
       <Contactus />
       <Footer />
-    </>
+    </div>
   );
 }
