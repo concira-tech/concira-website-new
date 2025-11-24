@@ -5,9 +5,7 @@ import Applications from "./_components/Applications";
 import Contactus from "./_components/Contactus";
 import Features from "./_components/Features";
 import FloatingCards from "./_components/FloatingCards";
-import Footer from "./_components/Footer";
 import HeroSection from "./_components/HeroSection";
-import Navbar from "./_components/Navbar";
 import SectionOne from "./_components/SectionOne";
 import SectionThree from "./_components/SectionThree";
 import SectionTwo from "./_components/SectionTwo";
@@ -80,10 +78,8 @@ export default function Home() {
       </motion.button>
 
       {/* Page Content */}
-      <div className="flex flex-col space-y-12">
-        <Navbar />
-        <HeroSection />
-      </div>
+
+      <HeroSection />
       <SectionOne />
       <SectionTwo />
       <SectionThree />
@@ -92,7 +88,6 @@ export default function Home() {
       <FloatingCards />
       <Testimonials />
       <Contactus />
-      <Footer />
     </div>
   );
 }
