@@ -10,7 +10,6 @@ const Applications = () => {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24"
-      id="about"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">

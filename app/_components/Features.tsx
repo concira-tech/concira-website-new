@@ -21,7 +21,7 @@ const features = [
 
 const Features = () => {
   return (
-    <div id="about" className="bg-[#202020] px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+    <div className="bg-[#202020] px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 sm:mb-14 md:mb-16">
           Designed to Work Where You Do

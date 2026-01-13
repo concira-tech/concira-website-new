@@ -10,7 +10,6 @@ const SectionOne = () => {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
       className="bg-black container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32"
-      id="solutions"
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}

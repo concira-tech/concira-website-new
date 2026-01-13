@@ -77,7 +77,6 @@ const SectionTwo: React.FC = () => {
 
   return (
     <section
-      id="products"
       className="bg-[#202020] text-black"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
