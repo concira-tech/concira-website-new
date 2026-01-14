@@ -1,8 +1,8 @@
-import SmartFunctional from "@/_components/products/SmartFunctional";
-import KeyFeatures from "@/_components/products/KeyFeatures";
-import TouchSwitch from "@/_components/products/TouchSwitch";
-import DependablePerformance from "@/_components/products/DependablePerformance";
-import ControlCTA from "@/_components/products/ControlCTA";
+import SmartFunctional from "@/_components/products/touchSwitches/SmartFunctional";
+import KeyFeatures from "@/_components/products/touchSwitches/KeyFeatures";
+import TouchSwitch from "@/_components/products/touchSwitches/TouchSwitch";
+import DependablePerformance from "@/_components/products/touchSwitches/DependablePerformance";
+import ControlCTA from "@/_components/products/touchSwitches/ControlCTA";
 
 const ProductsPage = () => {
   return (

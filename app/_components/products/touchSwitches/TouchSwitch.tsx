@@ -26,7 +26,7 @@ const TouchSwitch = () => {
               <div>
                 <div className="relative rounded-2xl overflow-hidden glow-accent">
                   <Image
-                    src="/products/touch-switch.png"
+                    src="/products/touchSwitches/touch-switch.png"
                     alt="Premium touch switch panel in a modern bedroom setting"
                     className="w-full h-auto object-cover rounded-2xl"
                     width={600}

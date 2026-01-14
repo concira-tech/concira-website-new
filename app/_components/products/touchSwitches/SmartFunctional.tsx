@@ -28,7 +28,7 @@ const SmartFunctional = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden">
               <Image
-                src="/products/smart-functional.png"
+                src="/products/touchSwitches/smart-functional.png"
                 alt="Smart touch switch panel with blue LED indicators"
                 className="w-full h-auto object-cover rounded-2xl"
                 width={300}
