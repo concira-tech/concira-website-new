@@ -1,16 +1,16 @@
 import { MapPin, Mail, Phone, Check } from "lucide-react";
-import { Card } from "./ui/Card";
-import { Avatar, AvatarFallback } from "./ui/Avatar";
-import { Input } from "./ui/Input";
+import { Card } from "../ui/Card";
+import { Avatar, AvatarFallback } from "../ui/Avatar";
+import { Input } from "../ui/Input";
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "./ui/Select";
-import { Textarea } from "./ui/Textarea";
-import { Button } from "./ui/Button";
+} from "../ui/Select";
+import { Textarea } from "../ui/Textarea";
+import { Button } from "../ui/Button";
 import { motion } from "motion/react";
 
 const Contactus = () => {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { utilsOne } from "../_utils";
+import { utilsOne } from "../../_utils";
 import { motion } from "motion/react";
 
 const SectionOne = () => {

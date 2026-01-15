@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Card } from "./ui/Card";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/Avatar";
+import { Card } from "../ui/Card";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/Avatar";
 import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 import { motion } from "motion/react";
 

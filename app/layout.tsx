@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 // import { Theme } from "@radix-ui/themes";
 import { inter, sora } from "./_utils/fonts";
 import "./globals.css";
-import Navbar from "./_components/Navbar";
-import Footer from "./_components/Footer";
+import Navbar from "./_components/home/Navbar";
+import Footer from "./_components/home/Footer";
 
 export const metadata: Metadata = {
   title: "Concira - hospitality automation dashboard",

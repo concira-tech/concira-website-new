@@ -1,15 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import Applications from "./_components/Applications";
-import Contactus from "./_components/Contactus";
-import Features from "./_components/Features";
-import FloatingCards from "./_components/FloatingCards";
-import HeroSection from "./_components/HeroSection";
-import SectionOne from "./_components/SectionOne";
-import SectionThree from "./_components/SectionThree";
-import SectionTwo from "./_components/SectionTwo";
-import Testimonials from "./_components/Testimonials";
+import Applications from "./_components/home/Applications";
+import Contactus from "./_components/home/Contactus";
+import Features from "./_components/home/Features";
+import FloatingCards from "./_components/home/FloatingCards";
+import HeroSection from "./_components/home/HeroSection";
+import SectionOne from "./_components/home/SectionOne";
+import SectionThree from "./_components/home/SectionThree";
+import SectionTwo from "./_components/home/SectionTwo";
+import Testimonials from "./_components/home/Testimonials";
 import { ArrowUp, ArrowDown } from "lucide-react";
 
 export default function Home() {

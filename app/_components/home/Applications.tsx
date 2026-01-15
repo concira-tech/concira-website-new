@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CustomAccordion } from "./ui/CustomAccordion";
+import { CustomAccordion } from "../ui/CustomAccordion";
 import { motion } from "motion/react";
 
 const Applications = () => {
