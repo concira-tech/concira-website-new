@@ -4,7 +4,7 @@ import TouchSwitch from "@/_components/products/touchSwitches/TouchSwitch";
 import DependablePerformance from "@/_components/products/touchSwitches/DependablePerformance";
 import ControlCTA from "@/_components/products/touchSwitches/ControlCTA";
 
-const ProductsPage = () => {
+const TouchSwitchesPage = () => {
   return (
     <div>
       <TouchSwitch />
@@ -16,4 +16,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default TouchSwitchesPage;
