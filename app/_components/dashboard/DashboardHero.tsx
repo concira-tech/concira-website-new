@@ -6,8 +6,8 @@ const DashboardHero = () => {
       {/* Hero Section */}
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative min-h-screen flex items-center justify-end">
+          <div className="container pl-4 sm:pl-6 lg:pl-8 ml-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Text Content */}
               <div>
@@ -30,11 +30,11 @@ const DashboardHero = () => {
               <div>
                 <div className="relative rounded-2xl overflow-hidden glow-accent">
                   <Image
-                    src="/products/dashboard/hero.png"
+                    src="/dashboard/hero.png"
                     alt="Premium Dashboard in a modern bedroom setting"
                     className="w-full h-auto object-cover rounded-2xl"
-                    width={600}
-                    height={600}
+                    width={700}
+                    height={700}
                   />
                 </div>
               </div>

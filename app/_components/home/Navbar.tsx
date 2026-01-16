@@ -8,7 +8,6 @@ import Link from "next/link";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/solutions", label: "Solutions" },
   { href: "/sectors", label: "Sectors" },
   { href: "/about", label: "About" },
   { href: "#contact", label: "Contact" },
@@ -21,11 +20,17 @@ const productLinks = [
   { href: "/ir-device", label: "IR Device" },
 ];
 
+const solutionLinks = [
+  { href: "/dashboard", label: "Dashboard" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -39,6 +44,7 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
     setIsMobileProductsOpen(false);
+    setIsMobileSolutionsOpen(false);
   };
 
   return (
@@ -95,6 +101,40 @@ const Navbar = () => {
                       className="block px-4 py-3 text-white/80 hover:text-primary hover:bg-zinc-900 transition-colors text-sm"
                     >
                       {product.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Solutions Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsSolutionsOpen(true)}
+            onMouseLeave={() => setIsSolutionsOpen(false)}
+          >
+            <button className="text-white/80 hover:text-primary transition-colors flex items-center gap-1">
+              Solutions
+              <ChevronDown className={`w-4 h-4 transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {isSolutionsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 mt-2 w-56 rounded-lg border border-[#454546] bg-black/95 backdrop-blur-md shadow-lg overflow-hidden"
+                >
+                  {solutionLinks.map((solution) => (
+                    <Link
+                      key={solution.href}
+                      href={solution.href}
+                      className="block px-4 py-3 text-white/80 hover:text-primary hover:bg-zinc-900 transition-colors text-sm"
+                    >
+                      {solution.label}
                     </Link>
                   ))}
                 </motion.div>
@@ -174,6 +214,40 @@ const Navbar = () => {
                             className="block text-white/80 hover:text-primary text-sm py-1"
                           >
                             {product.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Mobile Solutions Dropdown */}
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setIsMobileSolutionsOpen((prev) => !prev)}
+                    className="flex items-center justify-between w-full text-white/90 hover:text-primary text-sm py-1"
+                  >
+                    <span>Solutions</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isMobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {isMobileSolutionsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden pl-4 space-y-2"
+                      >
+                        {solutionLinks.map((solution) => (
+                          <Link
+                            key={solution.href}
+                            href={solution.href}
+                            onClick={closeMenu}
+                            className="block text-white/80 hover:text-primary text-sm py-1"
+                          >
+                            {solution.label}
                           </Link>
                         ))}
                       </motion.div>
