@@ -18,6 +18,7 @@ const productLinks = [
   { href: "/touch-switches", label: "Touch Switch" },
   { href: "/retrofit-switches", label: "Retrofit Switch" },
   { href: "/energy-meter", label: "Energy Meter" },
+  { href: "/ir-device", label: "IR Device" },
 ];
 
 const Navbar = () => {
