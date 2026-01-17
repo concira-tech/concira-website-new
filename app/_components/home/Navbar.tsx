@@ -22,6 +22,7 @@ const productLinks = [
 
 const solutionLinks = [
   { href: "/dashboard", label: "Dashboard" },
+  { href: "/valet", label: "Valet" },
 ];
 
 const Navbar = () => {
@@ -82,7 +83,11 @@ const Navbar = () => {
           >
             <button className="text-white/80 hover:text-primary transition-colors flex items-center gap-1">
               Products
-              <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown
+                className={`w-4 h-4 transition-transform ${
+                  isProductsOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
 
             <AnimatePresence>
@@ -116,7 +121,11 @@ const Navbar = () => {
           >
             <button className="text-white/80 hover:text-primary transition-colors flex items-center gap-1">
               Solutions
-              <ChevronDown className={`w-4 h-4 transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown
+                className={`w-4 h-4 transition-transform ${
+                  isSolutionsOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
 
             <AnimatePresence>
@@ -194,7 +203,11 @@ const Navbar = () => {
                     className="flex items-center justify-between w-full text-white/90 hover:text-primary text-sm py-1"
                   >
                     <span>Products</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${isMobileProductsOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        isMobileProductsOpen ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
 
                   <AnimatePresence>
@@ -228,7 +241,11 @@ const Navbar = () => {
                     className="flex items-center justify-between w-full text-white/90 hover:text-primary text-sm py-1"
                   >
                     <span>Solutions</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${isMobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        isMobileSolutionsOpen ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
 
                   <AnimatePresence>
