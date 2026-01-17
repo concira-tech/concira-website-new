@@ -22,6 +22,7 @@ const Contactus = () => {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
         className="bg-black px-4 py-20"
+        id="contact"
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
