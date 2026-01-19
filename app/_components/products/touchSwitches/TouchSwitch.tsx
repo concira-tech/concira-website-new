@@ -6,7 +6,7 @@ const TouchSwitch = () => {
       {/* Hero Section */}
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center">
+        <section className="relative flex items-center pt-20 sm:pt-24 md:pt-28">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Text Content */}

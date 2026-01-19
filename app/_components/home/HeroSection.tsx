@@ -44,13 +44,13 @@ const HeroSection: React.FC = () => {
       variants={containerVariants}
     >
       {/* Responsive container */}
-      <div className="w-full max-w-6xl flex flex-col items-center justify-between gap-10 py-16 sm:py-20 lg:py-24">
+      <div className="w-full max-w-6xl flex flex-col items-center justify-between gap-10 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <motion.div
-          className="left flex flex-col justify-center items-center gap-5 text-center"
+          className="left flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 text-center"
           variants={leftVariants}
         >
-          <h3 className="text-2xl">Intelligence that</h3>
-          <h1 className="text-6xl font-bold">Powers Every Space</h1>
+          <h3 className="text-lg sm:text-xl md:text-2xl">Intelligence that</h3>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Powers Every Space</h1>
         </motion.div>
 
         <motion.div className="right w-full flex justify-center" variants={rightVariants}>

@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const ValetHero = () => {
   return (
-    <section className="relative min-h-screen bg-[#0a0a0a] flex flex-col items-center overflow-hidden py-20 px-4">
+    <section className="relative bg-[#0a0a0a] flex flex-col items-center overflow-hidden pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4">
       {/* Header Text */}
-      <div className="text-center mb-16 z-10">
+      <div className="text-center mb-8 sm:mb-12 md:mb-16 z-10">
         <h1
-          className="text-5xl md:text-6xl lg:text-7xl text-white mb-2"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white mb-2"
           style={{
             fontFamily: "Georgia, 'Times New Roman', serif",
             fontStyle: "italic",
@@ -15,7 +15,7 @@ const ValetHero = () => {
         >
           Seamless Valet.
         </h1>
-        <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight">
           Smarter Operations.
         </h2>
       </div>
@@ -99,16 +99,16 @@ const ValetHero = () => {
           </div>
         </div>
 
-        {/* Devices Layout */}
-        <div className="relative flex items-center justify-center">
+        {/* Devices Layout - Desktop */}
+        <div className="relative hidden md:flex items-center justify-center">
           {/* Left iPhone */}
-          <div className="absolute left-0 md:left-[5%] lg:left-[10%] z-20 -translate-y-4">
+          <div className="absolute left-[2%] md:left-[5%] lg:left-[10%] z-20 -translate-y-4">
             <Image
               src="/valet/iPhone1.png"
               alt="Valet Mobile App - Parked Cars View"
               width={280}
               height={560}
-              className="w-40 md:w-48 lg:w-56 h-auto object-contain"
+              className="w-36 md:w-48 lg:w-56 h-auto object-contain"
               priority
             />
           </div>
@@ -120,19 +120,54 @@ const ValetHero = () => {
               alt="Valet Admin Dashboard Overview"
               width={800}
               height={500}
-              className="w-[400px] md:w-[550px] lg:w-[700px] h-auto object-contain"
+              className="w-[350px] md:w-[550px] lg:w-[700px] h-auto object-contain"
               priority
             />
           </div>
 
           {/* Right iPhone */}
-          <div className="absolute right-0 md:right-[5%] lg:right-[10%] z-20 -translate-y-8">
+          <div className="absolute right-[2%] md:right-[5%] lg:right-[10%] z-20 -translate-y-8">
             <Image
               src="/valet/iPhone2.png"
               alt="Valet Service Status Mobile View"
               width={280}
               height={560}
-              className="w-40 md:w-48 lg:w-56 h-auto object-contain"
+              className="w-36 md:w-48 lg:w-56 h-auto object-contain"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Devices Layout - Mobile */}
+        <div className="md:hidden flex flex-col items-center gap-8">
+          {/* Laptop first on mobile */}
+          <div className="w-full max-w-sm">
+            <Image
+              src="/valet/laptop.png"
+              alt="Valet Admin Dashboard Overview"
+              width={800}
+              height={500}
+              className="w-full h-auto object-contain"
+              priority
+            />
+          </div>
+
+          {/* Phones side by side */}
+          <div className="flex justify-center gap-4">
+            <Image
+              src="/valet/iPhone1.png"
+              alt="Valet Mobile App - Parked Cars View"
+              width={280}
+              height={560}
+              className="w-28 sm:w-32 h-auto object-contain"
+              priority
+            />
+            <Image
+              src="/valet/iPhone2.png"
+              alt="Valet Service Status Mobile View"
+              width={280}
+              height={560}
+              className="w-28 sm:w-32 h-auto object-contain"
               priority
             />
           </div>

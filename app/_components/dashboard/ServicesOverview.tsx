@@ -217,24 +217,24 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section className="bg-[#0d0d0d] py-24 px-6">
+    <section className="bg-[#0d0d0d] py-16 sm:py-20 md:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto text-center">
         {/* Badge */}
-        <div className="flex justify-center mb-8">
-          <span className="bg-[#ff5722] text-white text-sm font-semibold px-6 py-2 rounded-full tracking-wider">
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <span className="bg-[#ff5722] text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 rounded-full tracking-wider">
             CONNECTED ECO-SYSTEM
           </span>
         </div>
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
           Everything Your Space Needs.
           <br />
           In One Place.
         </h2>
 
         {/* Subtext */}
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+        <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-8 sm:mb-10">
           Concira brings essential guest and operational services together - so teams spend less
           time coordinating and more time delivering great experiences.
         </p>
@@ -242,18 +242,18 @@ const ServicesOverview = () => {
         {/* CTA Button */}
         <Link
           href="/services"
-          className="inline-block bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold px-8 py-4 rounded-full transition-colors duration-300 mb-16"
+          className="inline-block bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-colors duration-300 mb-12 sm:mb-16 text-sm sm:text-base"
         >
           Explore All Services
         </Link>
 
         {/* Service Icons */}
-        <div className="flex justify-center items-center gap-2 md:gap-4">
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-4">
           {services.map((service, index) => (
             <div key={index} className="relative">
               {/* Tooltip */}
               {hoveredIndex === index && (
-                <div className="absolute -top-14 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                <div className="absolute -top-14 left-1/2 -translate-x-1/2 whitespace-nowrap hidden sm:block">
                   <div className="bg-[#2a2a2a] text-white text-sm px-4 py-2 rounded-lg">
                     {service.name}
                   </div>
@@ -264,7 +264,7 @@ const ServicesOverview = () => {
 
               {/* Icon Circle */}
               <div
-                className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-[#2a2a2a] flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-[#3a3a3a]"
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-[#2a2a2a] flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-[#3a3a3a]"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >

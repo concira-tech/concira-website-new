@@ -93,26 +93,26 @@ const Testimonials = () => {
             }`}
           >
             {/* Statistics */}
-            <div className="flex gap-16 mb-8 pb-8 border-b border-zinc-800">
+            <div className="flex gap-8 sm:gap-12 md:gap-16 mb-8 pb-8 border-b border-zinc-800">
               {testimonials[currentTestimonial].stats.map((stat, index) => (
                 <div key={index}>
-                  <div className="text-4xl font-bold text-white mb-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-zinc-400">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-zinc-400">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* Quote */}
-            <blockquote className="text-xl md:text-2xl text-white mb-12 leading-relaxed">
+            <blockquote className="text-base sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 leading-relaxed">
               "{testimonials[currentTestimonial].quote}"
             </blockquote>
 
             {/* Author & Navigation */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <Avatar className="w-12 h-12">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <Avatar className="w-10 h-10 sm:w-12 sm:h-12">
                   <AvatarImage
                     src={testimonials[currentTestimonial].author.avatar}
                   />

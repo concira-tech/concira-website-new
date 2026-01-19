@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen w-full">
       {/* Hero Section with Orange Background */}
-      <section className="bg-black pt-32 pb-16 px-6 md:px-12 lg:px-20">
+      <section className="bg-black pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left Side - Title */}

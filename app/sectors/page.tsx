@@ -100,8 +100,8 @@ const sectors: Sector[] = [
 
 const SectorsShowcase = () => {
   return (
-    <section className="bg-[#1a1a1a] py-20">
-      <div className="container mx-auto px-4 space-y-32">
+    <section className="bg-[#1a1a1a] pt-24 sm:pt-28 md:pt-32 pb-20">
+      <div className="container mx-auto px-4 space-y-24 sm:space-y-32">
         {sectors.map((sector, index) => (
           <motion.div
             key={sector.id}
