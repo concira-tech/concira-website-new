@@ -6,7 +6,7 @@ const DashboardHero = () => {
       {/* Hero Section */}
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-end">
+        <section className="relative  flex items-center justify-end pt-20 sm:pt-24 md:pt-28">
           <div className="container pl-4 sm:pl-6 lg:pl-8 ml-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Text Content */}
