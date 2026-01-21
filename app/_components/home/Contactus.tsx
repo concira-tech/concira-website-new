@@ -1,4 +1,7 @@
-import { MapPin, Mail, Phone, Check } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { MapPin, Mail, Phone, Check, Loader2 } from "lucide-react";
 import { Card } from "../ui/Card";
 import { Avatar, AvatarFallback } from "../ui/Avatar";
 import { Input } from "../ui/Input";
@@ -13,7 +16,76 @@ import { Textarea } from "../ui/Textarea";
 import { Button } from "../ui/Button";
 import { motion } from "motion/react";
 
+interface FormData {
+  name: string;
+  email: string;
+  organization: string;
+  subject: string;
+  message: string;
+}
+
 const Contactus = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    organization: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, subject: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({ type: "success", message: data.message });
+        setFormData({
+          name: "",
+          email: "",
+          organization: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({ type: "error", message: data.error });
+      }
+    } catch {
+      setSubmitStatus({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       <motion.div
@@ -116,25 +188,40 @@ const Contactus = () => {
                   </p>
                 </div>
 
-                <form className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Input
+                      name="name"
                       placeholder="Name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
                       className="bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
                     />
                     <Input
+                      name="email"
                       type="email"
                       placeholder="Email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className="bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
                     />
                   </div>
 
                   <Input
+                    name="organization"
                     placeholder="Organization / Property Name"
+                    value={formData.organization}
+                    onChange={handleInputChange}
                     className="bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
                   />
 
-                  <Select>
+                  <Select
+                    value={formData.subject}
+                    onValueChange={handleSelectChange}
+                    required
+                  >
                     <SelectTrigger className="bg-zinc-800 border-zinc-700 text-zinc-400">
                       <SelectValue placeholder="Subject" />
                     </SelectTrigger>
@@ -155,16 +242,41 @@ const Contactus = () => {
                   </Select>
 
                   <Textarea
+                    name="message"
                     placeholder="Message Box"
                     rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                     className="bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500 resize-none"
                   />
 
+                  {submitStatus.type && (
+                    <div
+                      className={`p-3 rounded-lg text-sm ${
+                        submitStatus.type === "success"
+                          ? "bg-green-500/10 text-green-400 border border-green-500/20"
+                          : "bg-red-500/10 text-red-400 border border-red-500/20"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
                   <Button
+                    type="submit"
                     size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold"
+                    disabled={isSubmitting}
+                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold disabled:opacity-50"
                   >
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </Button>
                 </form>
               </div>
