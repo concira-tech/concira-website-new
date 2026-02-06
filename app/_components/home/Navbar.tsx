@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/sectors", label: "Sectors" },
   { href: "/about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 const productLinks = [
@@ -154,7 +154,7 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <Link
-          href="#contact"
+          href="/#contact"
           scroll
           className="hidden md:inline-flex border border-[#454546] text-white px-4 py-2 rounded-full text-sm lg:text-base hover:bg-primary hover:text-black transition-colors"
         >
@@ -273,7 +273,7 @@ const Navbar = () => {
                 </div>
 
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   scroll
                   onClick={closeMenu}
                   className="mt-2 inline-flex w-full items-center justify-center border border-[#454546] text-white px-4 py-2 rounded-full text-sm hover:bg-primary hover:text-black transition-colors"
