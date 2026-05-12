@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Interpretation and Definitions */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Interpretation and Definitions</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Interpretation and Definitions</h2>
 
             <h3 className="text-lg font-semibold text-white mb-2">Interpretation</h3>
             <p>
@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Collecting and Using */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Collecting and Using Your Personal Data</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Collecting and Using Your Personal Data</h2>
 
             <h3 className="text-lg font-semibold text-white mb-2">Types of Data Collected</h3>
 
@@ -201,7 +201,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Use of Personal Data */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Use of Your Personal Data</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Use of Your Personal Data</h2>
             <p className="mb-3">The Company may use Personal Data for the following purposes:</p>
             <ul className="space-y-2">
               {[
@@ -239,7 +239,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Retention */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Retention of Your Personal Data</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Retention of Your Personal Data</h2>
             <p>
               The Company will retain Your Personal Data only for as long as is necessary for the
               purposes set out in this Privacy Policy. We will retain and use Your Personal Data to
@@ -257,7 +257,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Transfer */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Transfer of Your Personal Data</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Transfer of Your Personal Data</h2>
             <p>
               Your information, including Personal Data, is processed at the Company's operating
               offices and in any other places where the parties involved in the processing are
@@ -281,7 +281,7 @@ export default function PrivacyPolicyPage() {
 
           {/* GDPR */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
               Your Data Protection Rights Under the General Data Protection Regulation (GDPR)
             </h2>
             <p>
@@ -313,7 +313,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Disclosure */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Disclosure of Your Personal Data</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Disclosure of Your Personal Data</h2>
 
             <h3 className="text-lg font-semibold text-white mb-2">Business Transactions</h3>
             <p>
@@ -345,7 +345,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Security */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Security of Your Personal Data</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Security of Your Personal Data</h2>
             <p>
               The security of Your Personal Data is important to Us, but remember that no method of
               transmission over the Internet, or method of electronic storage is 100% secure. While
@@ -356,7 +356,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Children's Privacy */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Children's Privacy</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Children's Privacy</h2>
             <p>
               Our Service does not address anyone under the age of 13. We do not knowingly collect
               personally identifiable information from anyone under the age of 13. If You are a
@@ -374,7 +374,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Links */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Links to Other Websites</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Links to Other Websites</h2>
             <p>
               Our Service may contain links to other websites that are not operated by Us. If You
               click on a third party link, You will be directed to that third party's site. We
@@ -388,7 +388,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Changes */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Changes to this Privacy Policy</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Changes to this Privacy Policy</h2>
             <p>
               We may update Our Privacy Policy from time to time. We will notify You of any changes
               by posting the new Privacy Policy on this page.
@@ -406,7 +406,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Contact */}
           <motion.section {...section(0.1)}>
-            <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Contact Us</h2>
             <p className="mb-4">
               If you have any questions about this Privacy Policy, You can contact us:
             </p>

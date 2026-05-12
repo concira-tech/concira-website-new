@@ -9,8 +9,8 @@ const section = (delay = 0) => ({
 });
 
 const SectionHeading = ({ num, title }: { num: string; title: string }) => (
-  <h2 className="text-2xl font-bold text-white mb-5 flex items-baseline gap-3">
-    <span className="text-primary font-mono text-lg">{num}.</span>
+  <h2 className="text-xl sm:text-2xl font-bold text-white mb-5 flex items-baseline gap-3 flex-wrap">
+    <span className="text-primary font-mono text-base sm:text-lg shrink-0">{num}.</span>
     {title}
   </h2>
 );
@@ -370,7 +370,7 @@ export default function ConciergePrivacyPolicyPage() {
               device settings.
             </p>
             <div className="overflow-x-auto rounded-xl border border-zinc-800">
-              <table className="w-full text-sm">
+              <table className="w-full text-sm min-w-[540px]">
                 <thead>
                   <tr className="bg-zinc-900 border-b border-zinc-800">
                     <th className="text-left px-4 py-3 text-white font-semibold">Permission</th>
